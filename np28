@@ -1,0 +1,15 @@
+s = input().strip()  # 读成字符串，直接拿到4个字符
+lst = []
+for c in s:
+    num = int(c)
+    new_num = (num + 3) % 9
+    lst.append(new_num)
+
+# 交换位置
+lst[0], lst[2] = lst[2], lst[0]
+lst[1], lst[3] = lst[3], lst[1]
+
+# 拼接成4位数字输出
+# 把列表数字逐个转字符串再合并
+res = "".join(str(x) for x in lst)
+print(res)
